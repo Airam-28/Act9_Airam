@@ -22,11 +22,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: maven
+        # Hemos quitado la línea del cache para evitar errores de ruta
+        
     - name: Build with Maven
+      # Aquí le decimos: "Entra en la carpeta demo y ejecuta el comando"
       run: mvn -B package --file demo/pom.xml
