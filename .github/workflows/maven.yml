@@ -30,6 +30,5 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-      # Forzamos a que ignore los tests solo para que te salga el VERDE y puedas entregar
-      # Ya que vimos que en tu PC los tests SI pasan (barra verde de tu captura anterior)
-      run: mvn -B package -DskipTests --file demo/pom.xml
+      # Cambiamos "demo" por "Act9_Airam" que es como se llama tu carpeta en GitHub
+      run: mvn -B package -DskipTests --file Act9_Airam/pom.xml
