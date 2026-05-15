@@ -1,4 +1,4 @@
-name: Java CI with Maven and MySQL
+name: Java CI with Gradle and MySQL
 
 on:
   push:
@@ -28,7 +28,12 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        cache: gradle
 
-    - name: Build with Maven
-      # Cambiamos "demo" por "Act9_Airam" que es como se llama tu carpeta en GitHub
-      run: mvn -B package -DskipTests --file Act9_Airam/pom.xml
+    - name: Make gradlew executable
+      run: chmod +x gradlew
+      working-directory: demo
+
+    - name: Build with Gradle
+      run: ./gradlew build -x test
+      working-directory: demo
