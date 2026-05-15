@@ -28,8 +28,8 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        # Hemos quitado la línea del cache para evitar errores de ruta
-        
+
     - name: Build with Maven
-      # Aquí le decimos: "Entra en la carpeta demo y ejecuta el comando"
-      run: mvn -B package --file demo/pom.xml
+      # ESTO ES LO IMPORTANTE: Le dice que trabaje dentro de demo
+      working-directory: ./demo
+      run: mvn -B package
