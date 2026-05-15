@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/estudiantes")
 @RequiredArgsConstructor
+// Endpoint para gestionar estudiantes - Airam Ceballos Marrero
 public class EstudianteController {
 
     private final EstudianteService estudianteService;
